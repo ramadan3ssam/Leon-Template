@@ -246,10 +246,9 @@ header .links ul li:hover a {
 
 .special-heading {
     text-align: center;
-    /* position: relative; */
 }
 
-.special-heading h3 {
+.special-heading h2 {
     margin-bottom: 0;
     font-weight: 800;
     font-size: 160px;
@@ -260,16 +259,27 @@ header .links ul li:hover a {
     margin: -50px auto;
     color: #575757;
     font-size: 25px;
-    /* position: absolute; */
-    /* top: calc(100% - 50px); */
-    /* left: 35%; */
 }
 
 
 /* mobile 5 inches */
 
-@media (min-width:480px) {
+
+/* @media (max-width:480px) {
     .special-heading h3 {
+        font-size: 100px;
+    }
+    .special-heading p {
+        margin: -40px auto;
+        font-size: 20px;
+    }
+} */
+
+
+/* small screen 8 inches */
+
+@media (max-width:768px) {
+    .special-heading h2 {
         font-size: 100px;
     }
     .special-heading p {
@@ -278,15 +288,17 @@ header .links ul li:hover a {
     }
 }
 
+.services .container {
+    padding-top: 20vh;
+    padding-bottom: 15px;
+}
 
-/* small screen 8 inches */
+.services .container .col {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5%;
+}
 
-@media (min-width:768px) {
-    .special-heading h3 {
-        font-size: 100px;
-    }
-    .special-heading p {
-        margin: -40px auto;
-        font-size: 20px;
-    }
+.services .container .col .srv {
+    display: flex;
 }
