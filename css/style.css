@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #10CAB7;
+    --secondry-color: #2C4755;
 }
 
 * {
@@ -17,10 +18,6 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-}
-
-i {
-    color: var(--primary-color);
 }
 
 
@@ -56,6 +53,63 @@ i {
 @media (min-width:1200px) {
     .container {
         width: 1170px;
+    }
+}
+
+i {
+    color: var(--primary-color);
+}
+
+p {
+    line-height: 2;
+    color: #575757;
+    font-size: 17px;
+}
+
+
+/* my FrameWork */
+
+.special-heading {
+    text-align: center;
+}
+
+.special-heading h2 {
+    margin-bottom: 0;
+    font-weight: 800;
+    font-size: 160px;
+    color: hsl(210, 1%, 90%);
+}
+
+.special-heading p {
+    margin: -50px auto;
+    color: #575757;
+    font-size: 25px;
+}
+
+
+/* mobile 5 inches */
+
+
+/* @media (max-width:480px) {
+    .special-heading h3 {
+        font-size: 100px;
+    }
+    .special-heading p {
+        margin: -40px auto;
+        font-size: 20px;
+    }
+} */
+
+
+/* small screen 8 inches */
+
+@media (max-width:767px) {
+    .special-heading h2 {
+        font-size: 100px;
+    }
+    .special-heading p {
+        margin: -40px auto;
+        font-size: 20px;
     }
 }
 
@@ -201,18 +255,20 @@ header .links ul li:hover a {
 .features {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: #f6f6f6;
+    background-color: #FAFAFA;
 }
 
-.features .container {
+.features .container-feats {
+    padding-left: 5%;
+    padding-right: 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    /* grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); */
-    /* gap: 5%; */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 5%;
+    place-items: center;
 }
 
 .features .feat {
-    /* max-width: 360px; */
+    max-width: 340px;
     padding: 20px;
     text-align: center;
 }
@@ -244,61 +300,105 @@ header .links ul li:hover a {
 
 /***********  Services  **********/
 
-.special-heading {
-    text-align: center;
+.services .serv-info {
+    padding-top: 30%;
+    padding-bottom: 20vh;
 }
 
-.special-heading h2 {
-    margin-bottom: 0;
-    font-weight: 800;
-    font-size: 160px;
-    color: #F6F6F6;
-}
-
-.special-heading p {
-    margin: -50px auto;
-    color: #575757;
-    font-size: 25px;
-}
-
-
-/* mobile 5 inches */
-
-
-/* @media (max-width:480px) {
-    .special-heading h3 {
-        font-size: 100px;
-    }
-    .special-heading p {
-        margin: -40px auto;
-        font-size: 20px;
-    }
-} */
-
-
-/* small screen 8 inches */
-
-@media (max-width:768px) {
-    .special-heading h2 {
-        font-size: 100px;
-    }
-    .special-heading p {
-        margin: -40px auto;
-        font-size: 20px;
-    }
-}
-
-.services .container {
-    padding-top: 20vh;
-    padding-bottom: 15px;
-}
-
-.services .container .col {
+.services .serv-info {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 5%;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
 }
 
 .services .container .col .srv {
     display: flex;
+    margin-bottom: 20px;
+}
+
+.services .container .col .last-srv {
+    margin-top: 40px;
+}
+
+@media (max-width:767px) {
+    .services .container .col .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.services .container .col .srv i {
+    flex-basis: 60px;
+}
+
+.services .container .col .srv .srv-text {
+    flex: 1;
+}
+
+.services .container .col .srv h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.services .container .col .image {
+    text-align: center;
+    position: relative;
+}
+
+.services .container .col .image img {
+    width: 300px;
+}
+
+.services .container .image::after {
+    content: "";
+    width: 100px;
+    height: calc(100% + 100px);
+    background-color: var(--secondry-color);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: -1;
+}
+
+@media (max-width:1199px) {
+    .services .container .last-col {
+        display: none;
+    }
+}
+
+
+/***********  Portfolio  **********/
+
+.portfolio {
+    background-color: #FAFAFA;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.portfolio .container-portfolio {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.portfolio .card-holder {
+    margin-top: 20%;
+    padding-bottom: 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 5%;
+    place-items: center;
+    /* width: 100%; */
+}
+
+.portfolio .card-holder .card {
+    background-color: #fff;
+}
+
+.portfolio .card-holder .card>*:not(img) {
+    padding-left: 30px;
+}
+
+.portfolio .card-holder .card img {
+    width: 100%;
+    height: 70%;
 }
